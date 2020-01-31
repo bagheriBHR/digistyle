@@ -1,0 +1,239 @@
+
+.form-title{
+    color: #fff !important;
+    font-size: 1rem;
+    background-color: #79aec8;
+    border-radius: 0;
+}
+.form-title:hover{
+    color: #fff;
+}
+.customform{
+    border-bottom: 1px solid #eeeeee;
+}
+.custom-field-title{
+    font-size:1rem;
+    color: rgb(71, 71, 71);
+}
+.custom-field:focus{
+    box-shadow: 0 0 0 transparent !important;
+    border: 2px solid #79aec8;
+}
+
+.custom-field:focus::placeholder{
+    color: transparent;
+}
+.custombutton{
+    background-color:#79aec8 ;
+    border-radius: 0px;
+    font-size:0.8rem;
+    color: #fff;
+    transition:all 0.3s;
+    border-radius: 3px;
+}
+.custombutton:hover{
+    color: #fff;
+    background-color: #457a94;
+}
+.add{
+    font-size: 0.8rem;
+    color: #fff !important;
+}
+.add:hover{
+    color: #fff !important;
+    text-decoration: none;
+}
+.add img{
+    width: 15px;
+}
+.bg{
+    background-color: #79aec8;
+}
+.customtable thead{
+background-color: #79aec8;
+color: #fff !important;
+font-size: 0.9rem;
+}
+.customtable tr td{
+    vertical-align: middle !important;
+    font-size: 0.8rem;
+    color: rgb(129, 129, 129);
+}
+.customtable tbody tr:nth-child(even){
+    background-color: #eee;
+}
+/*.moveFade{*/
+/*    width: 15px;*/
+/*    opacity: 0.5;*/
+/*}*/
+.dropbtn , .editbtn{
+    font-size: 0.8rem !important;
+    color:rgb(129, 129, 129) !important;
+}
+/*.moveFade{*/
+/*     opacity: 1;*/
+/* }*/
+
+
+html{
+    font-family:Vazir;
+}
+.header{
+    background-color: #417690;
+}
+.header h1 a{
+    color: #f5dd5d;
+    font-size: 1.5rem;
+}
+.header h3{
+    color: #ffffcc;
+    font-size: 0.8rem;
+}
+.header ul li img {
+    width: 13px;
+}
+.header ul li a{
+    color: #fff;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #6993a7;
+}
+.header ul li a:hover{
+    color: #79aec8;
+    border-bottom: 1px solid #79aec8;
+    text-decoration: none;
+}
+.main h2{
+    font-size: 1.3rem;
+    color: #836866;
+}
+.btntitle{
+    color: #fff !important;
+    font-size: 0.8rem;
+    background-color: #79aec8;
+    border-radius: 0;
+}
+.btntitle:hover{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline !important;
+}
+table td{
+    border-bottom: 1px solid #eeeeee;
+}
+table td a{
+    font-size: 0.8rem;
+    color: #447e9b !important;
+}
+table td a:hover{
+    color: #0f3244 !important;
+    text-decoration: none;
+}
+table td img{
+    width: 15px;
+}
+.activity{
+    background-color: #f8f8f8;
+}
+.activity h2{
+    font-size: 1.1rem;
+    border-bottom:1px solid #eeeeee;
+    color: #6b7174;
+}
+.activity h3{
+    font-size: 0.9rem;
+    color: #6b7174;
+}
+.activity img{
+    width: 12px;
+    height: 12px;
+}
+.activity a{
+    color:#447e9b ;
+    font-size: 0.8rem;
+}
+.activity a:hover{
+    color:#0f3244 ;
+    text-decoration: none;
+}
+.activity span{
+    color: #9c9a99;
+    font-size: 0.7rem;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("Vazir.eot");
+    src: url("Vazir.eot?#iefix") format("embedded-opentype"),
+        url("Vazir.woff2") format("woff2"), url("Vazir.woff") format("woff"),
+        url("Vazir.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("Vazir-Bold.eot");
+    src: url("Vazir-Bold.eot?#iefix") format("embedded-opentype"),
+        url("Vazir-Bold.woff2") format("woff2"),
+        url("Vazir-Bold.woff") format("woff"),
+        url("Vazir-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("Vazir-Light.eot");
+    src: url("Vazir-Light.eot?#iefix") format("embedded-opentype"),
+        url("Vazir-Light.woff2") format("woff2"),
+        url("Vazir-Light.woff") format("woff"),
+        url("Vazir-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("Vazir-Medium.eot");
+    src: url("Vazir-Medium.eot?#iefix") format("embedded-opentype"),
+        url("Vazir-Medium.woff2") format("woff2"),
+        url("Vazir-Medium.woff") format("woff"),
+        url("Vazir-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("Vazir-Thin.eot");
+    src: url("Vazir-Thin.eot?#iefix") format("embedded-opentype"),
+        url("Vazir-Thin.woff2") format("woff2"),
+        url("Vazir-Thin.woff") format("woff"),
+        url("Vazir-Thin.ttf") format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("Vazir-Black.eot");
+    src: url("Vazir-Black.eot?#iefix") format("embedded-opentype"),
+        url("Vazir-Black.woff2") format("woff2"),
+        url("Vazir-Black.woff") format("woff"),
+        url("Vazir-Black.ttf") format("truetype");
+    font-weight: 900;
+}
+/* @font-face {
+  font-family: Far-Dinar;
+  src:        url('Far_Dinar_Two_Medium.eot');
+  src: local('☺'),
+              url('Far_Dinar_Two_Medium.woff') format('woff'),
+              url('Far_Dinar_Two_Medium.ttf') format('truetype'),
+              url('Far_Dinar_Two_Medium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  } */
+
+body,
+*,
+card-title {
+    font-family: Vazir;
+}
+body {
+    font-size: 13px;
+}

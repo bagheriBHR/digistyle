@@ -1,0 +1,57 @@
+.sidebar input::placeholder{
+    font-size: 0.7rem;
+    color: rgb(141, 141, 141);
+}
+.sidebar form {
+    border: 1px solid #e0e0e0;
+}
+.sidebar form input{
+    border: 1px solid #fff !important;
+}
+.sidebar form img{
+    width: 20px;
+}
+.sidebar label{
+    font-size: 0.8rem;
+    color: rgb(136, 134, 134);
+}
+.usage{
+    height:200px !important;
+    overflow-y: scroll;
+}
+.product h5{
+    color: rgb(180, 23, 23);
+}
+.sort .color div{
+    width: 20px;
+    height: 20px;
+}
+.sort{
+    /* border: 1px solid #e0e0e0; */
+    box-shadow: 0 0 10px rgb(236, 236, 236);
+    background:linear-gradient(#fff,#f7f7f7);
+}
+.sort h3{
+    font-size: 0.9rem;
+    color: rgb(131, 130, 130);
+}
+.sort ul li{
+    list-style-type: none;
+    text-align: right;
+
+}
+.sort ul li a{
+    text-decoration: none;
+    color: rgb(144, 144, 144);
+    font-size: 0.8rem;
+    border-left: 1px solid rgb(236, 236, 236);
+}
+.category_name{
+    color: #838383;
+}
+.reply{
+    color: #8d8d8d !important;
+    border: 1px solid #8d8d8d !important;
+    font-size: 0.8rem !important;
+}
+

@@ -1,0 +1,9 @@
+h1{
+    background-color: tomato !important;
+}
+img{
+    width: 100px;
+    height: 150px;
+    border: 1px solid #000;
+    border-radius: 20px;
+}

@@ -1,0 +1,85 @@
+html{
+    font-family:Vazir;
+}
+.header{
+    background-color: #417690;
+}
+.header h1 a{
+    color: #f5dd5d;
+    font-size: 1.5rem;
+}
+
+.header h3{
+    color: #ffffcc;
+    font-size: 0.8rem;
+}
+.header ul li img {
+    width: 13px;
+}
+.header ul li a{
+    color: #fff;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #6993a7;
+}
+.header ul li a:hover{
+    color: #79aec8;
+    border-bottom: 1px solid #79aec8;
+    text-decoration: none;
+}
+.main h2{
+    font-size: 1.3rem;
+    color: #836866;
+}
+.btntitle{
+    color: #fff !important;
+    font-size: 0.8rem;
+    background-color: #79aec8;
+    border-radius: 0;
+}
+.btntitle:hover{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline !important;
+}
+table td{
+    border-bottom: 1px solid #eeeeee;
+}
+table td a{
+    font-size: 0.8rem;
+    color: #447e9b !important;
+}
+table td a:hover{
+    color: #0f3244 !important;
+    text-decoration: none;
+}
+table td img{
+    width: 15px;
+}
+.activity{
+    background-color: #f8f8f8;
+}
+.activity h2{
+    font-size: 1.1rem;
+    border-bottom:1px solid #eeeeee;
+    color: #6b7174;
+}
+.activity h3{
+    font-size: 0.9rem;
+    color: #6b7174;
+}
+.activity img{
+    width: 12px;
+    height: 12px;
+}
+.activity a{
+    color:#447e9b ;
+    font-size: 0.8rem;
+}
+.activity a:hover{
+    color:#0f3244 ;
+    text-decoration: none;
+}
+.activity span{
+    color: #9c9a99;
+    font-size: 0.7rem;
+}

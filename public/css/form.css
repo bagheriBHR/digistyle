@@ -1,0 +1,76 @@
+
+.form-title{
+    color: #fff !important;
+    font-size: 1rem;
+    background-color: #79aec8;
+    border-radius: 0;
+}
+.form-title:hover{
+    color: #fff;
+}
+.customform{
+    border-bottom: 1px solid #eeeeee;
+}
+.custom-field-title{
+    font-size:1rem;
+    color: rgb(71, 71, 71);
+}
+.custom-field:focus{
+    box-shadow: 0 0 0 transparent !important;
+    border: 2px solid #79aec8;
+}
+
+.custom-field:focus::placeholder{
+    color: transparent;
+}
+.custombutton{
+    background-color:#79aec8 ;
+    border-radius: 0px;
+    font-size:0.8rem;
+    color: #fff;
+    transition:all 0.3s;
+    border-radius: 3px;
+}
+.custombutton:hover{
+    color: #fff;
+    background-color: #457a94;
+}
+.add{
+    font-size: 0.8rem;
+    color: #fff !important;
+}
+.add:hover{
+    color: #fff !important;
+    text-decoration: none;
+}
+.add img{
+    width: 15px;
+}
+.bg{
+    background-color: #79aec8;
+}
+.customtable thead{
+background-color: #79aec8;
+color: #fff !important;
+font-size: 0.9rem;
+}
+.customtable tr td{
+    vertical-align: middle !important;
+    font-size: 0.8rem;
+    color: rgb(129, 129, 129);
+}
+.customtable tbody tr:nth-child(even){
+    background-color: #eee;
+}
+/*.moveFade{*/
+/*    width: 15px;*/
+/*    opacity: 0.5;*/
+/*}*/
+.dropbtn , .editbtn{
+    font-size: 0.8rem !important;
+    color:rgb(129, 129, 129) !important;
+}
+/*.moveFade{*/
+/*     opacity: 1;*/
+/* }*/
+

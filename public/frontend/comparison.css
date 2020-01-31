@@ -1,0 +1,19 @@
+.pcontainer{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #f7f7f7;
+}
+.pcontainer h4{
+    border-bottom: 1px solid #000;
+}
+.property{
+    background:linear-gradient(45deg,transparent,#e6e6e6);
+    color: rgb(148, 148, 148);
+    font-size: 1.2rem;
+}
+ h4{
+    font-size: 1.2rem;
+    color: rgb(114, 114, 114);
+}
