@@ -983,10 +983,10 @@ visibility:hidden;
 }
 .rating .fa-star + .fa-star-o { color: #E69500; }
 /**======= 7.7. Pagination =======**/
-.pagination { margin:0px; }
-.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus { background: #3e7cb4; }
-.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span { border-radius:0px; }
-.pagination > li > a, .pagination > li > span { color:#3e7cb4; }
+/*.pagination { margin:0px; }*/
+/*.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus { background: #3e7cb4; }*/
+/*.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span { border-radius:0px; }*/
+/*.pagination > li > a, .pagination > li > span { color:#3e7cb4; }*/
 /*===================================================================================*/
 /*  8. Product Page
 /*===================================================================================*/

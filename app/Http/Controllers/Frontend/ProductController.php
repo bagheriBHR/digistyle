@@ -63,4 +63,15 @@ class ProductController extends Controller
         }])->paginate($page);
         return view('frontend.category.index',compact(['products','category']));
     }
+
+    public function apiGetProduct($id)
+    {
+        $products = Product::with('photos')->whereHas('categories', function($q) use ($id){
+            $q->where('id',$id);
+        })->paginate(1);
+        $response =[
+            'products' => $products
+        ];
+        return response()->json($response, 200);
+    }
 }

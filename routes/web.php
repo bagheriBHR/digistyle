@@ -18,6 +18,7 @@ Route::prefix('api')->group(function (){
     Route::get('categories','Admin\CategoryController@apiIndex');
     Route::post('categories/attribute','Admin\CategoryController@apiIndexAttribute');
     Route::get('cities/{provinceId}','Auth\RegisterController@getAllCities');
+    Route::get('/product/{id}','Frontend\ProductController@apiGetProduct');
 });
 
 //Route::group(['auth' => 'admin'],function (){

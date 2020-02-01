@@ -3,9 +3,8 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import 'owl.carousel'
 require('./bootstrap');
-
+var Paginate = require('vuejs-paginate')
 window.Vue = require('vue');
 
 /**
@@ -23,6 +22,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('attribute-component', require('./components/AttributeComponent.vue').default);
 Vue.component('province-component', require('./components/ProvinceComponent.vue').default);
 Vue.component('profile-component', require('./components/ProfileComponent.vue').default);
+Vue.component('product-component', require('./components/ProductComponent.vue').default);
+Vue.component('paginate', Paginate)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('fonts/font-face.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/owlCarousel/dist/assets/owl.theme.default.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/owlCarousel/dist/assets/owl.carousel.css') }}">
+{{--    <link rel="stylesheet" href="{{ asset('frontend/owlCarousel/dist/assets/owl.theme.default.css') }}">--}}
+{{--    <link rel="stylesheet" href="{{ asset('frontend/owlCarousel/dist/assets/owl.carousel.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('fonts-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
     <link rel="stylesheet" href="{{asset('mainProject/css/stylesheet.css')}}">
@@ -24,7 +24,7 @@
         <a class="navbar-brand font-weight-bold" href="#"><img src="/frontend/img/logo.png" alt=""> فروشگاه <span>صنایع دستی</span></a>
         <form class="form-inline w-50 ">
             <input class="form-control form-control-sm mr-sm-2 py-0 my-0 w-75 " type="search" placeholder="جستجو محصول" aria-label="Search">
-            <button class="btn my-2 my-sm-0 py-0 my-0 mr-auto" type="submit"><img src="/img/icons8-search-50.png" alt=""></button>
+            <button class="btn my-2 my-sm-0 py-0 my-0 mr-auto" type="submit"><img src="/frontend/img/icons8-search-50.png" alt=""></button>
         </form>
         <div class="d-flex" id="header">
 {{--            <div class="dropdown">--}}
@@ -202,13 +202,13 @@
                             <!-- Footer products -->
                             <ul class="footernav navbar-nav d-flex flex-column p-0 text-right w-100">
                                 <li class="nav-item">
-                                    <a class="nav-link px-2 pb-1 pt-0" href="#"><img src="frontend/img/icons8-filled-circle-50.png" alt="" class="ml-3">مراحل ثبت سفارش</a>
+                                    <a class="nav-link px-2 pb-1 pt-0" href="#"><img src="/frontend/img/icons8-filled-circle-50.png" alt="" class="ml-3">مراحل ثبت سفارش</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link px-2 py-1" href="#"><img src="frontend/img/icons8-filled-circle-50.png" alt="" class="ml-3"> رویه ارسال سفارش</a>
+                                    <a class="nav-link px-2 py-1" href="#"><img src="/frontend/img/icons8-filled-circle-50.png" alt="" class="ml-3"> رویه ارسال سفارش</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link px-2 py-1" href="#"><img src="frontend/img/icons8-filled-circle-50.png" alt="" class="ml-3">شیوه های پرداخت</a>
+                                    <a class="nav-link px-2 py-1" href="#"><img src="/frontend/img/icons8-filled-circle-50.png" alt="" class="ml-3">شیوه های پرداخت</a>
                                 </li>
                             </ul>
                             <!-- End of Footer products -->
@@ -220,24 +220,24 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex">
                         <div class="col-12 col-md-5 d-flex flex-column mt-md-0">
-                            <h3 class=" pb-3 mb-2 w-100 text-right"><img src="frontend/img/icons8-chevron-down-50.png" alt="" class="ml-2">راه های ارتباط با ما</h3>
+                            <h3 class=" pb-3 mb-2 w-100 text-right"><img src="/frontend/img/icons8-chevron-down-50.png" alt="" class="ml-2">راه های ارتباط با ما</h3>
                             <div class="d-flex flex-column align-items-start">
                                 <div class="contact d-flex">
-                                    <h4 class=" ml-2"><img src="frontend/img/icons8-phone-50.png" alt="" class="ml-2"> تلفن:</h4>
+                                    <h4 class=" ml-2"><img src="/frontend/img/icons8-phone-50.png" alt="" class="ml-2"> تلفن:</h4>
                                     <h5>(555) 555-55555</h5>
                                 </div>
                                 <div class="contact d-flex">
-                                    <h4 class=" ml-2"><img src="frontend/img/icons8-email-open-50.png" alt="" class="ml-2"> ایمیل:</h4>
+                                    <h4 class=" ml-2"><img src="/frontend/img/icons8-email-open-50.png" alt="" class="ml-2"> ایمیل:</h4>
                                     <h5>email@yahoo.com</h5>
                                 </div>
                                 <div class="contact d-flex">
-                                    <h4 class=" ml-2"><img src="frontend/img/icons8-address-50.png" alt="" class="ml-2"> آدرس:</h4>
+                                    <h4 class=" ml-2"><img src="/frontend/img/icons8-address-50.png" alt="" class="ml-2"> آدرس:</h4>
                                     <h5 class="text-justify">...</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-7  mt-md-0 ">
-                            <h3 class=" pb-3 mb-2 w-100 text-right"><img src="frontend/img/icons8-chevron-down-50.png" alt="" class="ml-2">عضویت در خبرنامه</h3>
+                            <h3 class=" pb-3 mb-2 w-100 text-right"><img src="/frontend/img/icons8-chevron-down-50.png" alt="" class="ml-2">عضویت در خبرنامه</h3>
                             <div class="input-group px-2 mb-4 ">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon3">ارسال</span>
@@ -245,9 +245,9 @@
                                 <input type="text" class="form-control text-right pr-0 py-0" id="basic-url" aria-describedby="basic-addon3" placeholder="لطفا ایمیل خود را وارد کنید"/>
                             </div>
                             <div class="trust d-flex justify-content-start w-75">
-                                <img src="frontend/img/trusticon.png" alt="" class="mx-2 p-2">
-                                <img src="frontend/img/trusticon2.png" alt="" class="mx-2 p-2">
-                                <img src="frontend/img/trusticon3.png" alt="" class="mx-2 p-2">
+                                <img src="/frontend/img/trusticon.png" alt="" class="mx-2 p-2">
+                                <img src="/frontend/img/trusticon2.png" alt="" class="mx-2 p-2">
+                                <img src="/frontend/img/trusticon3.png" alt="" class="mx-2 p-2">
                             </div>
                         </div>
                     </div>
@@ -260,22 +260,22 @@
     <div class="d-flex align-items-center justify-content-center border-top mt-4 mx-5">
         <div class="d-flex flex-column flex-md-row justify-content-around w-75 mt-4">
             <div class=" service d-flex flex-column align-items-center justify-content-center">
-                <img src="img/icons8-return-purchase-50.png" alt="" class=" p-1">
+                <img src="/frontend/img/icons8-return-purchase-50.png" alt="" class=" p-1">
                 <h3 class="my-2 mx-4">ضمانت بازگشت کالا</h3>
                 <h4>به مدت 10 روز</h4>
             </div>
             <div class=" service d-flex flex-column align-items-center justify-content-center">
-                <img src="img/icons8-quality-50.png" alt="" class="p-1">
+                <img src="/frontend/img/icons8-quality-50.png" alt="" class="p-1">
                 <h3 class="my-2 mx-4">ضمانت اصالت و کیفیت</h3>
                 <h4>دست سازه های ایرانی</h4>
             </div>
             <div class=" service d-flex flex-column align-items-center justify-content-center">
-                <img src="img/icons8-delivery-50.png" alt="" class="p-1 ">
+                <img src="/frontend/img/icons8-delivery-50.png" alt="" class="p-1 ">
                 <h3 class="my-2 mx-4">ارسال سریع</h3>
                 <h4>رایگان برای خرید بالای 300 هزار تومان</h4>
             </div>
             <div class=" service d-flex flex-column align-items-center justify-content-center">
-                <img src="img/icons8-secure-50.png" alt="" class="p-1" >
+                <img src="/frontend/img/icons8-secure-50.png" alt="" class="p-1" >
                 <h3 class="my-2 mx-4"> پرداخت مطمئن</h3>
                 <h4>پس از دریافت کالا</h4>
             </div>
@@ -285,13 +285,13 @@
         <h6 class="text-white m-0 font-weight-normal">کلیه حقوق این سایت محفوظ می باشد.</h6>
         <div class="d-flex justify-content-start pt-2 pt-md-2">
             <div class="follow d-flex align-items-center justify-content-center ">
-                <img src="img/telegram.png" alt=""/>
+                <img src="/frontend/img/telegram.png" alt=""/>
             </div>
             <div class="follow d-flex align-items-center justify-content-center  mx-2">
-                <img src="img/instagram.png" alt=""/>
+                <img src="/frontend/img/instagram.png" alt=""/>
             </div>
             <div class="follow d-flex align-items-center justify-content-center">
-                <img src="img/whatsapp.png" alt=""/>
+                <img src="/frontend/img/whatsapp.png" alt=""/>
             </div>
         </div>
     </div>
@@ -305,7 +305,7 @@
 <script src="{{asset('frontend/bootstrap/js/bootstrap.bundle.js')}}"></script>
 <script src="{{asset('frontend/bootstrap/js/bootstrap.min.js')}}"></script>
 
-<script src="{{asset('frontend/owlCarousel/dist/owl.carousel.js')}}"></script>
+{{--<script src="{{asset('frontend/owlCarousel/dist/owl.carousel.js')}}"></script>--}}
 
 <script>
     $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {

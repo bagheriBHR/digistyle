@@ -25,6 +25,6 @@
     },
     "dependencies": {
         "@dashboardcode/bsmultiselect": "^0.4.33",
-        "owl.carousel": "^2.3.4"
+        "vuejs-paginate": "^2.1.0"
     }
 }
