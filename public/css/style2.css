@@ -410,3 +410,7 @@ color:#d5dceb ;
 .bg-end h6{
     font-size: 0.7rem;
 }
+.userInfo h3{
+    font-size: 1rem !important;
+    color: #9f9f9f !important;
+}

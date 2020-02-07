@@ -1,23 +1,25 @@
 @extends('frontend.layout.master')
 
 @section('content')
-    <div class="container">
-        @if(Session::has('success'))
-            <div class="alert alert-success">
-                <div>{{session('success')}}</div>
-            </div>
-        @endif
+    <div class="bg-grey d-flex flex-column align-items-center px-3 pt-3 pb-3">
+        <!-- left side -->
+        <div class="col-10 d-flex flex-column">
+            @if(Session::has('success'))
+                <div class="alert alert-success text-right">
+                    <div>{{session('success')}}</div>
+                </div>
+            @endif
 
-        <div class="row d-flex justify-content-center">
+            <div class=" d-flex justify-content-center stuff py-3 border-stuff mb-5 bg-white">
             <!--Middle Part Start-->
             <div id="content" class="col-sm-9 text-right">
-                <h1 class="title my-3">حساب کاربری ورود</h1>
+{{--                <h1 class="title my-3">حساب کاربری ورود</h1>--}}
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2 class="subtitle">مشتری جدید</h2>
+                        <h2 class="subtitle" >مشتری جدید</h2>
                         <p><strong>ثبت نام حساب کاربری</strong></p>
                         <p>با ایجاد حساب کاربری میتوانید سریعتر خرید کرده، از وضعیت خرید خود آگاه شده و تاریخچه ی سفارشات خود را مشاهده کنید.</p>
-                        <a href="{{route('user.register')}}" class="btn">ادامه</a> </div>
+                        <a href="{{route('user.register')}}" class="btn btn-gold">ادامه</a> </div>
                     <div class="col-sm-6">
                         <h2 class="subtitle">مشتری قبلی</h2>
                         <p><strong>من از قبل مشتری شما هستم</strong></p>
@@ -42,13 +44,14 @@
                                 @endif
                                 <br />
                                 <a class="gold" href="#">فراموشی رمز عبور</a></div>
-                            <input type="submit" value="ورود" class="btn mb-3" />
+                            <input type="submit" value="ورود" class="btn btn-gold mb-3" />
                         </form>
 
                     </div>
                 </div>
             </div>
             <!--Middle Part End -->
+        </div>
         </div>
     </div>
 @endsection

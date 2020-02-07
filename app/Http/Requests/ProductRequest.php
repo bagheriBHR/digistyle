@@ -39,9 +39,6 @@ class ProductRequest extends FormRequest
             'price'=>'required',
             'short_desc'=>'required',
             'long_desc'=>'required',
-            'meta_title'=>'required',
-            'meta_desc'=>'required',
-            'meta_keywords'=>'required',
         ];
     }
 
@@ -49,14 +46,11 @@ class ProductRequest extends FormRequest
     {
         return[
             'name.required'=>'لطفا نام محصول را وارد کنید.',
-            'slug.unique'=>'لطفا نام مستعار محصول باید یکتا باشد.',
+            'slug.unique'=>' نام مستعار محصول باید یکتا باشد.',
             'status.required'=>'لطفا وضعیت نشر را مشخص کنید.',
             'price.required'=>'لطفا قیمت محصول را وارد کنید.',
             'short_desc.required'=>'لطفا توضیحات کوتاه محصول را وارد کنید.',
             'long_desc.required'=>'لطفا توضیحات بلند محصول را وارد کنید.',
-            'meta_title.required'=>'لطفا عنوان سئو را وارد کنید.',
-            'meta_desc.required'=>'لطفا توضیحات سئو را وارد کنید.',
-            'meta_keywords.required'=>'لطفا کلمات کلیدی سئو را وارد کنید.',
         ];
 
     }

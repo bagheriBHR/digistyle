@@ -107,9 +107,12 @@ a:focus { outline:none; }
 	margin:0px 0px 20px 0px;
 	line-height:normal;
 	font-size:20px;
-	color:#000000;
-	border-bottom:2px solid #ddd;
-	padding-bottom:3px;
+	color: #5f5f5f;
+	border-bottom:1px solid #ddd;
+	padding-bottom:10px;
+}
+#content strong , #content lable , #content p{
+    color: #5f5f5f;
 }
 .subtitle .viewall {font-size: 15px;}
 /**===== Title for 404 Page =====**/
@@ -144,7 +147,9 @@ a:focus { outline:none; }
 	margin-top:20px;
 	margin-bottom:20px;
 }
-#content { min-height:400px; }
+#content {
+    min-height:400px;
+}
 /*===================================================================================*/
 /*  3. Header
 /*===================================================================================*/

@@ -38,4 +38,14 @@ class Product extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
+
+    public function likes()
+    {
+        return $this->morphToMany(User::class,'likeable');
+    }
+
 }

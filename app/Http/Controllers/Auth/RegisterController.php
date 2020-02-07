@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\City;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Province;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -76,5 +77,11 @@ class RegisterController extends Controller
     {
         $cities = City::where('province_id',$provinceId)->get();
         return response()->json(['cities'=>$cities],200);
+    }
+
+    public function getAllProvinces()
+    {
+        $provinces = Province::all();
+        return response()->json(['provinces'=>$provinces],200);
     }
 }

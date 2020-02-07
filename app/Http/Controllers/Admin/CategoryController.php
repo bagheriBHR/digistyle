@@ -22,7 +22,7 @@ class CategoryController extends Controller
     {
         $categories=Category::with(['childrenRecursive'])
         ->where('parent_id',null)
-        ->paginate(10);
+        ->paginate(2);
         return view('admin.caterory.index',compact(['categories']));
     }
 
@@ -49,6 +49,11 @@ class CategoryController extends Controller
     {
         $category=new Category();
         $category->name=$request->name;
+        if($request->slug){
+            $category->slug =make_slug($request->slug);
+        }else{
+            $category->slug =make_slug($request->name);
+        }
         $category->meta_title=$request->meta_title;
         $category->meta_desc=$request->meta_desc;
         $category->meta_keywords=$request->meta_keywords;
@@ -96,6 +101,11 @@ class CategoryController extends Controller
     {
         $category=Category::find($id);
         $category->name=$request->name;
+        if($request->slug){
+            $category->slug =make_slug($request->slug);
+        }else{
+            $category->slug =make_slug($request->name);
+        }
         $category->meta_title=$request->meta_title;
         $category->meta_desc=$request->meta_desc;
         $category->meta_keywords=$request->meta_keywords;

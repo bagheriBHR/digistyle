@@ -32,9 +32,9 @@
         <table class="customtable w-100 table mb-0 pb-0">
             <thead>
             <tr>
-                <th class="text-right" >شماره</th>
-                <th class="text-right">نام </th>
-                <th class="text-center" >زمان ایجاد</th>
+{{--                <th class="text-right" >شماره</th>--}}
+                <th class="text-right pr-5">نام </th>
+                <th class="text-right" >زمان ایجاد</th>
                 <th width="10%"></th>
                 <th width="10%"></th>
                 <th width="10%"></th>
@@ -43,9 +43,9 @@
             <tbody>
             @foreach($categories as $key=>$category)
                 <tr>
-                    <td class="text-right" scope="row">{{convertToPersianNumber($key+1 ) }}</td>
-                    <td class="text-right p-0">{{ $category->name }}</td>
-                    <td class="text-center p-0">{{\Hekmatinasser\Verta\Verta::instance($category->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran')) }}</td>
+{{--                    <td class="text-right" scope="row">{{convertToPersianNumber($category->id ) }}</td>--}}
+                    <td class="text-right pr-5">{{ $category->name }}</td>
+                    <td class="text-right p-0">{{\Hekmatinasser\Verta\Verta::instance($category->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran')) }}</td>
                     <td class=" border-0 p-0">
                         <a href="{{route('category.edit',$category->id)}}" class="btn editbtn"><img src="{{asset('img/edit.png')}}" alt="" class="ml-2 moveFade">ویرایش کردن</a>
                     </td>
@@ -66,6 +66,6 @@
             @endforeach
             </tbody>
         </table>
-{{--        <div class="col-md-12 mt-3 d-flex justify-content-center">{{$categories->links()}}</div>--}}
+        <div class="col-md-12 mt-3 d-flex justify-content-center">{{$categories->links()}}</div>
     </div>
 @endsection

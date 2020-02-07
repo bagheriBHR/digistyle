@@ -19,13 +19,19 @@
                 <div class="form-group row d-flex align-items-center">
                     <label for="name" class="custom-field-title col-sm-2 col-form-label text-right font-weight-bold mr-2">تصویر:</label>
                     <div class="col-sm-2">
-                        <img src="{{$category->photo->path}}" class="img-fluid">
+                        <img src="{{$category->photo ? $category->photo->path : 'http://www.placehold.it/400'}}" class="img-fluid">
                     </div>
                 </div>
                 <div class="form-group row d-flex align-items-center">
                     <label for="name" class="custom-field-title col-sm-2 col-form-label text-right font-weight-bold mr-2">عنوان:</label>
                     <div class="col-sm-5">
                         <input type="text" class="custom-field form-control form-control-sm" id="name" name="name" value="{{$category->name}}">
+                    </div>
+                </div>
+                <div class="form-group row d-flex align-items-center">
+                    <label for="slug" class="custom-field-title col-sm-2 col-form-label text-right font-weight-bold mr-2">نام مستعار:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="custom-field form-control form-control-sm" id="slug" name="slug" value="{{$category->slug}}">
                     </div>
                 </div>
                 <div class="form-group row d-flex align-items-center">
@@ -36,7 +42,7 @@
                             @foreach($categories as $category_list)
                                 <option value="{{$category_list->id}}" {{$category->parent_id == $category_list->id ? 'selected':''}}>{{$category_list->name}}</option>
                                 @if(count($category_list->childrenRecursive)>0)
-                                    @include('admin.partials.category_list',['categories'=>$category_list->childrenRecursive,'level'=>1,'category'=>$category])
+                                    @include('admin.partials.category_list',['categories'=>$category_list->childrenRecursive,'level'=>1,'category'=>$category->parent_id])
                                 @endif
                             @endforeach
                         </select>

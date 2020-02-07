@@ -10,7 +10,7 @@
     <div class="col-md-10 pb-3 px-0">
         <div class="mb-4">
             <div class="d-flex flex-column">
-                <h3 class="form-title text-right py-2 pr-2 mb-0 font-weight-normal">ایجاد مطلب</h3>
+                <h3 class="form-title text-right py-2 pr-2 mb-0 font-weight-normal">ویرایش برند</h3>
             </div>
             @include('admin.partials.form-errors')
             <form class="customform p-3 bg-white" method="post" action="{{route('brand.update',$brand->id)}}">

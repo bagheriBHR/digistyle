@@ -25,6 +25,7 @@ html{
     color: #79aec8;
     border-bottom: 1px solid #79aec8;
     text-decoration: none;
+    background-color: transparent !important;
 }
 .main h2{
     font-size: 1.3rem;

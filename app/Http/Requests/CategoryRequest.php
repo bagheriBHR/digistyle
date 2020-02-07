@@ -15,6 +15,14 @@ class CategoryRequest extends FormRequest
     {
         return true;
     }
+    protected function prepareForValidation()
+    {
+        if($this->input('slug')){
+            $this->merge(['slug'=>make_slug($this->input('slug'))]);
+        }else{
+            $this->merge(['slug'=>make_slug($this->input('name'))]);
+        }
+    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -25,6 +33,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name'=>'required ',
+            'slug'=>'unique:categories',
         ];
     }
 
@@ -32,6 +41,7 @@ class CategoryRequest extends FormRequest
     {
         return[
             'name.required' => 'لطفا نام دسته را وارد کنید',
+            'slug.unique'=>' نام مستعار محصول باید یکتا باشد.',
         ];
 
     }

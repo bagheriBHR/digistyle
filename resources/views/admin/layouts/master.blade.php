@@ -8,7 +8,7 @@
     {{--    <link rel="stylesheet" href="{{ asset('css/all-admin.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('fonts/font-face.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts-awesome/css/font-awesome.min.css') }}">
-{{--    <link rel="stylesheet" href="{{asset('css/AdminLTE.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/AdminLTE.css')}}">
 {{--    <link rel="stylesheet" href="{{asset('css/skins/_all-skins.min.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/master.css')}}">
     <link rel="stylesheet" href="{{asset('css/form.css')}}">
@@ -38,25 +38,25 @@
         <h1 class="font-weight-normal py-2"><a href="{{route('main.index')}}">پنل مدیریت</a></h1>
         <div class="d-flex align-items-center">
             <h3 class="font-weight-normal m-0">خوش آمدید،</h3>
-            {{--            <h3 class="font-weight-normal m-0 pr-1">نام کاربر.</h3>--}}
+            @if(Auth::check())
+                <h3 class="font-weight-normal m-0 pr-1">{{Auth::user()->name . ' ' . Auth::user()->last_name}}</h3>
+            @endif
             <h3  class="font-weight-normal m-0 pr-1 pl-3" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
 {{--                {{ Auth::user()->name }}--}}
                 <span class="caret"></span>
             </h3>
             <ul class="nav p-0">
-                <li class=" py-0"><a href=""> نمایش وبگاه</a><span class="text-white mx-1">/</span></li>
-                <li class=" py-0"><a href="#">تغییر گذرواژه</a><span class="text-white mx-1">/</span></li>
+                <li class=" py-0"><a href="{{url('/')}}"> نمایش وبگاه</a><span class="text-white mx-1">/</span></li>
+                <li class=" py-0"><a href="{{route('admin.password.index')}}">تغییر گذرواژه</a><span class="text-white mx-1">/</span></li>
                 {{--                <li class="py-0"><a href="#">خروج</a></li>--}}
                 <li class="py-0">
-                    <a  href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('خروج') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                    @if(Auth::check())
+                        <a href="{{route('admin.logout')}}" class=" txt_green" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit()">خروج</a>
+                        <form id="logout-form" action="{{ route('admin.logout') }}" method="post" style="display: none;">
+                            @csrf
+                        </form>
+                        @endif
                 </li>
             </ul>
             {{--            <ul class="navbar-nav ml-auto">--}}
@@ -95,7 +95,9 @@
 </div>
 
 <div class="main d-flex flex-column align-items-start mx-4">
-    <h2 class="py-3 font-weight-normal">مدیریت وب گاه</h2>
+    @if(Auth::check())
+      <h2 class="py-3 font-weight-normal">مدیریت وب گاه</h2>
+    @endif
     <div class="d-flex w-100">
         @yield('sidebar')
         @yield('content')

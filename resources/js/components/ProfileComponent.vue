@@ -4,7 +4,7 @@
             <ul class="list-item p-0 mb-0">
                 <li class="pb-0"><a href="#" class="p-3"  :class="{active_li:isActive('address')}"  @click.prevent="setActive('address')"><i class="fa fa-address-book ml-2"></i>لیست آدرس ها</a></li>
                 <li class="pb-0"><a href="" class="p-3" :class="{active_li:isActive('favourite')}"  @click.prevent="setActive('favourite')"><i class="fa fa-list-alt ml-2"></i>لیست علاقه مندی</a></li>
-                <li class="pb-0"><a href="" class="p-3" :class="{active_li:isActive('item3')}"  @click.prevent="setActive('item3')"><i class="fa fa-list-alt ml-2"></i>تاریخچه سفارشات</a></li>
+                <li class="pb-0"><a :href="'http://shop.test/profile/orders'" class="p-3" :class="{active_li:isActive('item3')}"  @click.prevent="setActive('item3')"><i class="fa fa-list-alt ml-2"></i>تاریخچه سفارشات</a></li>
                 <li class="pb-0"><a href="#" class="p-3"  :class="{active_li:isActive('item4')}"  @click.prevent="setActive('item4')"><i class="fa fa-list-alt ml-2"></i>دانلود ها</a></li>
                 <li class="pb-0"><a href="#" class="p-3"  :class="{active_li:isActive('item5')}"  @click.prevent="setActive('item5')"><i class="fa fa-list-alt ml-2"></i>امتیازات خرید</a></li>
                 <li class="pb-0"><a href="#" class="p-3"  :class="{active_li:isActive('item6')}"  @click.prevent="setActive('item6')"><i class="fa fa-list-alt ml-2"></i>بازگشت</a></li>
@@ -21,15 +21,17 @@
         name: "ProfileComponent",
         data(){
             return{
-                activeItem : 'address',
+                activeItem : '',
             }
         },
         methods:{
             isActive: function(item){
                 return this.activeItem === item;
+                console.log(item)
             },
             setActive: function (item) {
                 this.activeItem = item;
+                console.log( this.activeItem)
             }
         }
     }

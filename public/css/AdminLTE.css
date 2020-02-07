@@ -1502,7 +1502,7 @@ a:focus {
   transition: all 0.3s linear;
   position: absolute;
   top: -10px;
-  left: 10px;
+  right: 10px;
   z-index: 0;
   font-size: 90px;
   color: rgba(0, 0, 0, 0.15);
@@ -1964,7 +1964,6 @@ a:focus {
 }
 .chat .item > .message {
   margin-right: 55px;
-  margin-top: -40px;
 }
 .chat .item > .message > .name {
   display: block;

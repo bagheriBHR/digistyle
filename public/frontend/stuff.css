@@ -3,11 +3,14 @@
     border: 1px solid rgb(224, 224, 224);
     border-top: 3px solid #1b6a6f !important;
 }
+.stuff .icon a{
+    opacity: 0.8;
+    font-size:1.5rem;
+}
 .stuff .icon img{
     width: 30px;
-    opacity: 0.8;
 }
-.stuff .icon img:hover{
+.stuff .icon a:hover{
     cursor: pointer;
     opacity: 1;
 }
@@ -157,6 +160,7 @@
 }
 .comment h5{
     font-size: 1rem;
+    color: #626262 !important;
 }
 .comment .star img{
     width: 20px;

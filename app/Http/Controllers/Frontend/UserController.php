@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Address;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,8 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->password =Hash::make($request->input('password')) ;
         $user->save();
+        $role = Role::where('name','کاربر عادی')->first();
+        $user->roles()->sync($role->id);
 
         $address = new Address();
         $address->address = $request->input('address');

@@ -70,6 +70,10 @@ font-size: 0.9rem;
     font-size: 0.8rem !important;
     color:rgb(129, 129, 129) !important;
 }
+.userInfo h3{
+    font-size: 1rem !important;
+    color: #404040 !important;
+}
 /*.moveFade{*/
 /*     opacity: 1;*/
 /* }*/

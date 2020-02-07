@@ -135,7 +135,7 @@
                 </div>
                 <div class="buttons w-100">
                     <div class="pull-left"><a href="{{url('/')}}" class="btn btn-info">ادامه خرید</a></div>
-                    <div class="pull-right"><a href="" class="btn gold-btn">تسویه حساب</a></div>
+                    <div class="pull-right"><a href="{{route('order.verify')}}" class="btn gold-btn">تسویه حساب</a></div>
                 </div>
             </div>
         </div>

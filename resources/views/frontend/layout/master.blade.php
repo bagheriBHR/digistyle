@@ -21,9 +21,9 @@
 <!-- navbar -->
 <nav class="container-fluid navbar navbar-expand-lg navbar-light d-flex flex-column px-3 position-relative pb-0">
     <div class=" up d-flex flex-column flex-md-row justify-content-between align-items-center w-100">
-        <a class="navbar-brand font-weight-bold" href="#"><img src="/frontend/img/logo.png" alt=""> فروشگاه <span>صنایع دستی</span></a>
-        <form class="form-inline w-50 ">
-            <input class="form-control form-control-sm mr-sm-2 py-0 my-0 w-75 " type="search" placeholder="جستجو محصول" aria-label="Search">
+        <a class="navbar-brand font-weight-bold" href="{{url('/')}}"><img src="/frontend/img/logo.png" alt=""> فروشگاه <span>صنایع دستی</span></a>
+        <form class="form-inline w-50 " action="{{route('frontend.search.product')}}" method="get">
+            <input class="form-control form-control-sm mr-sm-2 py-0 my-0 w-75 " name="title" type="search" placeholder="جستجو محصول" aria-label="Search">
             <button class="btn my-2 my-sm-0 py-0 my-0 mr-auto" type="submit"><img src="/frontend/img/icons8-search-50.png" alt=""></button>
         </form>
         <div class="d-flex" id="header">
@@ -123,7 +123,7 @@
     <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
         <ul class="navbar-nav d-flex justify-content-between w-100 p-0">
             <li class="nav-item active py-3 px-3">
-                <a class="nav-link" href="#"><img src="/frontend/img/icons8-home-50.png" alt=""> صفحه اصلی <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{url('/')}}"><img src="/frontend/img/icons8-home-50.png" alt=""> صفحه اصلی <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item py-3 px-3">
                 <a class="nav-link" href="#"><img src="/frontend/img/icons8-news-50.png" alt=""> مجله فروشگاهی</a>
@@ -138,13 +138,13 @@
                 <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton">
                     @foreach($categories as $category)
                         @if(count($category->childrenRecursive) > 0)
-                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle text-right"  href="#">{{$category->name}} </a>
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle text-right"  href="{{route('category.productShow',$category->slug)}}">{{$category->name}} </a>
                                 <ul class="dropdown-menu">
                                     @include('frontend.partials.category',['categories'=>$category->childrenRecursive])
                                 </ul>
                             </li>
                         @else
-                            <li><a class="dropdown-item text-right" href="#">{{$category->name}} </a></li>
+                            <li><a class="dropdown-item text-right" href="{{route('category.productShow',$category->slug)}}">{{$category->name}} </a></li>
                         @endif
                     @endforeach
                 </ul>
@@ -299,12 +299,14 @@
 
 <!-- end of footer -->
 {{--app.js should be in the first line--}}
-@yield('scripts')
-<script src="{{asset('js/app.js')}}"></script>
-<script src="{{asset('frontend/bootstrap/js/jquery.min.js')}}"></script>
+
+
+
+{{--<script src="{{asset('frontend/bootstrap/js/jquery.min.js')}}"></script>--}}
 <script src="{{asset('frontend/bootstrap/js/bootstrap.bundle.js')}}"></script>
 <script src="{{asset('frontend/bootstrap/js/bootstrap.min.js')}}"></script>
-
+{{--<script src="{{asset('js/app.js')}}"></script>--}}
+@yield('scripts')
 {{--<script src="{{asset('frontend/owlCarousel/dist/owl.carousel.js')}}"></script>--}}
 
 <script>

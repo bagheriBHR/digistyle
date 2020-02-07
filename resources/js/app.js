@@ -23,6 +23,8 @@ Vue.component('attribute-component', require('./components/AttributeComponent.vu
 Vue.component('province-component', require('./components/ProvinceComponent.vue').default);
 Vue.component('profile-component', require('./components/ProfileComponent.vue').default);
 Vue.component('product-component', require('./components/ProductComponent.vue').default);
+Vue.component('like-component', require('./components/LikeComponent').default);
+Vue.component('like-product-component', require('./components/LikeProductComponent').default);
 Vue.component('paginate', Paginate)
 
 /**

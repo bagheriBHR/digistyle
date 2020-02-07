@@ -49,4 +49,38 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Coupon::class);
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function photo()
+    {
+        return $this->belongsTo(Photo::class);
+    }
+
+    public function isAdmin()
+    {
+        foreach($this->roles as $role){
+            if($role->name=='مدیر'){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function productLikes()
+    {
+        return $this->morphedByMany(Product::class,'likeable');
+    }
+    public function postLikes()
+    {
+        return $this->morphedByMany(Post::class,'likeable');
+    }
 }

@@ -8,10 +8,10 @@
         <div class="card card-body border-0 p-0 mb-5">
             <table class="w-100 text-right">
                 <tr>
-                    <td class="py-2 pr-2 font-weight-bold"><a href=""><i class="fa fa-list-ul  ml-2"></i>لیست کاربران</a></td>
+                    <td class="py-2 pr-2 font-weight-bold"><a href="{{route('user.index')}}"><i class="fa fa-list-ul  ml-2"></i>لیست کاربران</a></td>
                 </tr>
                 <tr>
-                    <td class="py-2 pr-2 font-weight-bold"><a href=""><i class="fa fa-user-plus ml-2"></i>ثبت کاربران</a></td>
+                    <td class="py-2 pr-2 font-weight-bold"><a href="{{route('user.create')}}"><i class="fa fa-user-plus ml-2"></i>ثبت کاربران</a></td>
                 </tr>
             </table>
         </div>
@@ -27,6 +27,9 @@
             <table class="w-100 text-right">
                 <tr>
                     <td class="py-2 pr-2 font-weight-bold"><a href="{{route('product.index')}}"><i class="fa fa-list-alt ml-2"></i>لیست محصولات</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 pr-2 font-weight-bold"><a href="{{route('product.create')}}"><i class="fa fa-plus ml-2"></i>ایجاد محصول</a></td>
                 </tr>
             </table>
         </div>
@@ -50,11 +53,11 @@
         </div>
     </div>
     <p>
-        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-circle-o ml-2"></i> ویژگی ها
         </a>
     </p>
-    <div class="collapse" id="collapseExample5">
+    <div class="collapse" id="collapseExample3">
         <div class="card card-body border-0 p-0 mb-5">
             <table class="w-100 text-right">
                 <tr>
@@ -67,11 +70,11 @@
         </div>
     </div>
     <p>
-        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-apple ml-2"></i> برند ها
         </a>
     </p>
-    <div class="collapse" id="collapseExample3">
+    <div class="collapse" id="collapseExample4">
         <div class="card card-body border-0 p-0 mb-5">
             <table class="w-100 text-right">
                 <tr>
@@ -84,11 +87,11 @@
         </div>
     </div>
     <p>
-        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
+        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-ticket ml-2"></i>کوپن
         </a>
     </p>
-    <div class="collapse" id="collapseExample6">
+    <div class="collapse" id="collapseExample5">
         <div class="card card-body border-0 p-0 mb-5">
             <table class="w-100 text-right">
                 <tr>
@@ -101,32 +104,46 @@
         </div>
     </div>
     <p>
-        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
-            نظرات
+        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-first-order ml-2"></i>سفارشات
         </a>
     </p>
-    <div class="collapse" id="collapseExample4">
+    <div class="collapse" id="collapseExample6">
         <div class="card card-body border-0 p-0 mb-5">
             <table class="w-100 text-right">
                 <tr>
-                    <td class="py-2 pr-2 font-weight-bold"><a href="{{route('comment.index')}}">لیست نظرات  </a></td>
+                    <td class="py-2 pr-2 font-weight-bold"><a href="{{route('order.index')}}"><i class="fa fa-list ml-2"></i>لیست سفارشات  </a></td>
                 </tr>
             </table>
         </div>
     </div>
     <p>
-        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-            رسانه
+        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-comment ml-2"></i>نظرات
         </a>
     </p>
-    <div class="collapse" id="collapseExample3">
+    <div class="collapse" id="collapseExample7">
         <div class="card card-body border-0 p-0 mb-5">
             <table class="w-100 text-right">
                 <tr>
-                    <td class="py-2 pr-2 font-weight-bold"><a href="">لیست فایل ها</a></td>
+                    <td class="py-2 pr-2 font-weight-bold"><a href="{{route('comment.index')}}"><i class="fa fa-list ml-2"></i>لیست نظرات  </a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <p>
+        <a class="btn btntitle w-100 text-right"  data-toggle="collapse" data-target="#collapseExample8" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-newspaper-o ml-2"></i>مطالب
+        </a>
+    </p>
+    <div class="collapse" id="collapseExample8">
+        <div class="card card-body border-0 p-0 mb-5">
+            <table class="w-100 text-right">
+                <tr>
+                    <td class="py-2 pr-2 font-weight-bold"><a href="{{route('post.index')}}"><i class="fa fa-list ml-2"></i> لیست مطالب</a></td>
                 </tr>
                 <tr>
-                    <td class="py-2 pr-2 font-weight-bold"><a href="">آپلود فایل</a></td>
+                    <td class="py-2 pr-2 font-weight-bold"><a href="{{route('post.create')}}"><i class="fa fa-plus ml-2"></i>ایجاد مطلب </a></td>
                 </tr>
             </table>
         </div>

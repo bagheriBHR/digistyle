@@ -23,6 +23,12 @@
                     </div>
                 </div>
                 <div class="form-group row d-flex align-items-center">
+                    <label for="slug" class="custom-field-title col-sm-2 col-form-label text-right font-weight-bold mr-2">نام مستعار:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="custom-field form-control form-control-sm" id="slug" name="slug" >
+                    </div>
+                </div>
+                <div class="form-group row d-flex align-items-center">
                     <label for="parent_id" class="custom-field-title col-sm-2 col-form-label text-right font-weight-bold mr-2"> دسته والد :</label>
                     <div class="col-sm-5">
                         <select name="parent_id" class="custom-field form-control form-control-sm">

@@ -10,6 +10,7 @@ use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
@@ -76,7 +77,7 @@ class ProductController extends Controller
         $product->meta_title = $request->meta_title;
         $product->meta_desc = $request->meta_desc;
         $product->meta_keywords = $request->meta_keywords;
-        $product->user_id = 1;
+        $product->user_id =Auth::user()->id;
         $product->brand_id = $request->brand_id;
         $product->save();
 
@@ -141,7 +142,7 @@ class ProductController extends Controller
         $product->meta_title = $request->meta_title;
         $product->meta_desc = $request->meta_desc;
         $product->meta_keywords = $request->meta_keywords;
-        $product->user_id = 1;
+        $product->user_id =Auth::user()->id;
         $product->brand_id = $request->brand_id;
         $product->save();
 

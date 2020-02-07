@@ -1,81 +1,4 @@
 @extends('frontend.layout.master')
-@section('scripts')
-    <script>
-        $(document).ready(function() {
-
-            $('#owlProduct').owlCarousel({
-
-                // Most important owl features
-                items : 5,
-                itemsDesktop : [1199,4],
-                itemsDesktopSmall : [980,3],
-                itemsTablet: [768,2],
-                itemsTabletSmall: false,
-                itemsMobile : [479,1],
-                singleItem : false,
-
-                //Basic Speeds
-                slideSpeed : 200,
-                paginationSpeed : 800,
-                rewindSpeed : 1000,
-
-                //Autoplay
-                autoPlay : false,
-                stopOnHover : false,
-
-                // Navigation
-                navigation : false,
-                navigationText : ["prev","next"],
-                rewindNav : true,
-                scrollPerPage : false,
-
-                //Pagination
-                pagination : true,
-                paginationNumbers: false,
-
-                // Responsive
-                responsive: true,
-                responsiveRefreshRate : 200,
-                responsiveBaseWidth: window,
-
-                // CSS Styles
-                baseClass : "owl-carousel",
-                theme : "owl-theme",
-
-                //Lazy load
-                lazyLoad : false,
-                lazyFollow : true,
-
-                //Auto height
-                autoHeight : false,
-
-                //JSON
-                jsonPath : false,
-                jsonSuccess : false,
-
-                //Mouse Events
-                mouseDrag : true,
-                touchDrag : true,
-
-                //Transitions
-                transitionStyle : false,
-
-                // Other
-                addClassActive : false,
-
-                //Callbacks
-                beforeInit: false,
-                afterInit: false,
-                beforeMove: false,
-                afterMove: false,
-                afterAction: false,
-                startDragging : false
-
-            })
-
-        });
-    </script>
-@endsection
 @section('style')
     <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
 @endsection
@@ -107,17 +30,17 @@
     <!-- end of carousel -->
     <div class="bg-grey d-flex px-3 pt-3 pb-3">
         <!-- right side -->
-        @include('frontend.partials.sidebar')
+        @include('frontend.partials.sidebar',['categories'=>$categories])
         <!-- end of right side -->
         <!-- left side -->
-        <div class="col-10 d-flex flex-column pl-0">
+        <div class="col-10 d-flex flex-column pl-0" id="app">
             <!-- category -->
             <div class="d-flex flex-wrap mb-3">
                 @foreach($categories as $category)
                 <div class=" col-3 pl-0 mb-3">
                     <div class="category bg-white d-flex flex-column align-items-center justify-content-center p-2 ">
                         <img src="{{$category->photo->path}}" alt="" class="w-100">
-                        <a href="#" class="font-weight-bold mt-2 py-1 left">{{$category->name}}<img src="frontend/img/icons8-chevron-down-50.png" alt=""></a>
+                        <a href="{{route('category.productShow',$category->slug)}}" class="font-weight-bold mt-2 py-1 left">{{$category->name}}<img src="frontend/img/icons8-chevron-down-50.png" alt=""></a>
                     </div>
                 </div>
                 @endforeach
@@ -132,7 +55,7 @@
             </div>
             <div class="border d-flex flex-row flex-wrap py-5 mb-2 bg-white owl-carousel owl-theme" id="owlProduct">
                 @foreach($latestProduct as $product)
-                     <div class="col-12 col-md-2 ">
+                     <div class="col-12 col-md-3 ">
                     <div class="product  d-flex flex-column align-items-center justify-content-center position-relative py-3 ">
                         <a href="{{route('product.single',['slug'=>$product->slug])}}" class="text-center"><img src="{{$product->photos[0]->path}}" alt="" class="w-50"></a>
                         <h4 class="my-4">{{$product->name}}</h4>
@@ -143,7 +66,7 @@
                         @endif
                         <div class="saleicon d-flex flex-column justify-content-center align-items-center position-absolute p-2">
                             <a href="{{route('cart.add', ['id' => $product->id])}}"><img src="frontend/img/icons8-shopping-cart-5022.png" alt="" class="mb-3"></a>
-                            <img src="frontend/img/icons8-heart-5022.png" alt="">
+                            <like-product-component :product="{{$product}}"></like-product-component>
                             <img src="frontend/img/stuff/icons8-compare-2.png" alt="" class="mt-3">
                         </div>
                     </div>
@@ -306,7 +229,7 @@
                         <h5>10000 تومان</h5>
                         <div class="saleicon d-flex flex-column justify-content-center align-items-center position-absolute p-2">
                             <img src="img/icons8-shopping-cart-5022.png" alt="" class="mb-3">
-                            <img src="img/icons8-heart-5022.png" alt="">
+                            <<img src="img/icons8-heart-5022.png" alt="">>
                             <img src="img/stuff/icons8-compare-2.png" alt="" class="mt-3">
                         </div>
                     </div>
@@ -321,39 +244,26 @@
                     </div>
                     <div class="divider mt-5"></div>
                 </div>
-                <div class="d-flex flex-wrap">
-                    <div class="col-12 col-md-3 pl-0">
+                <div class="d-flex flex-wrap" >
+                    @foreach ($posts as $post)
+                    <div class="col-12 col-md-3 pl-0" >
                         <div class="article d-flex flex-column justify-content-center align-items-center border p-2">
-                            <img src="img/article1.jpg" alt="" class="w-100">
-                            <h4 class="mt-2">عنوان مقاله</h4>
-                            <p class="text-justify my-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                            <button class="btn my-2">ادامه مطلب</button>
+                            <img src="{{$post->photo->path}}" alt="" class="w-100">
+                            <h4 class="mt-2">{{$post->title}}</h4>
+                            <p class="text-justify my-2">{!! \Illuminate\Support\Str::limit($post->description,100) !!}</p>
+                            <div class="like d-flex justify-content-between align-items-center px-3 w-100 my-3">
+                                <h5 class="m-0">نویسنده : {{$post->user->name . ' ' . $post->user->last_name}}</h5>
+{{--                                <div class=" d-flex justify-content-right align-items-center">--}}
+{{--                                    <a href="{{route('post.dislike',$post->id)}}"><i class="fa fa-heart" style="color: red;"></i></a>--}}
+{{--                                    <h5 class="m-0 mr-2">{{count($post->likes)}} نفر</h5>--}}
+{{--                                </div>--}}
+                                <like-component :post="{{$post}}"></like-component>
+                            </div>
+                            <a href="{{route('frontend.post.show',$post->slug)}}" class="btn articlebtn my-2">ادامه مطلب</a>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3 pl-0">
-                        <div class="article d-flex flex-column justify-content-center align-items-center border p-2">
-                            <img src="img/article2.jpg" alt="" class="w-100">
-                            <h4 class="mt-2">عنوان مقاله</h4>
-                            <p class="text-justify my-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                            <button class="btn my-2">ادامه مطلب</button>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 pl-0">
-                        <div class="article d-flex flex-column justify-content-center align-items-center border p-2">
-                            <img src="img/article3.jpg" alt="" class="w-100">
-                            <h4 class="mt-2">عنوان مقاله</h4>
-                            <p class="text-justify my-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                            <button class="btn my-2">ادامه مطلب</button>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 pl-0">
-                        <div class="article d-flex flex-column justify-content-center align-items-center border p-2">
-                            <img src="img/article4.jpg" alt="" class="w-100">
-                            <h4 class="mt-2">عنوان مقاله</h4>
-                            <p class="text-justify my-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                            <button class="btn my-2">ادامه مطلب</button>
-                        </div>
-                    </div>
+                        @endforeach
+
                 </div>
             </div>
             <!-- end of articles -->
@@ -362,9 +272,12 @@
         <!-- end of left side -->
     </div>
     <div class="about d-flex flex-column align-items-center px-3 py-5">
-        <h4 class="mb-3">فروشگاه اینترنتی صنایع دستی</h4>
+        <h4 class="mb-3 text-white">فروشگاه اینترنتی صنایع دستی</h4>
         <p class="text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
     </div>
+@endsection
+@section('scripts')
+    <script src="{{asset('js/app.js')}}"></script>
 @endsection
 
 

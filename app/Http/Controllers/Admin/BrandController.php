@@ -41,6 +41,15 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'desc' => 'required',
+            'photo_id' => 'required',
+        ],[
+            'name.required' => 'نام برند شما باید درج شود',
+            'desc.required' => 'توضیحات برند را مشخص کنید',
+            'photo_id.required' => 'تصویر برند را مشخص کنید',
+        ]);
         $brand= new Brand();
         $brand->name=$request->name;
         $brand->desc=$request->desc;
@@ -83,6 +92,15 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'desc' => 'required',
+            'photo_id' => 'required',
+        ],[
+            'name.required' => 'نام برند شما باید درج شود',
+            'desc.required' => 'توضیحات برند را مشخص کنید',
+            'photo_id.required' => 'تصویر برند را مشخص کنید',
+        ]);
         $brand= Brand::find($id);
         $brand->name=$request->name;
         $brand->desc=$request->desc;

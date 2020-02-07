@@ -17,7 +17,7 @@
                     <button class="btn btn-outline-dark reply btn-open mb-2" id="div-comment-{{$comment->id}}">پاسخ</button>
                 </div>
             </div>
-            <p class="m-0 mb-2 mr-5">{{$comment->description}}</p>
+            <p class="m-0 mb-2 mr-5">{!! $comment->description !!}</p>
 
             <div class="form-reply col-md-12" id="f-div-comment-{{$comment->id}}" style="display: none">
                 <form class=" col-md-12" method="post" action="{{route('frontend.comment.reply',$product->id)}}">

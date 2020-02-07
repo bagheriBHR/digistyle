@@ -3,47 +3,19 @@
         <div class="form-group d-flex required">
             <label  class="col-sm-2 control-label">استان</label>
             <div class="col-sm-10">
-                <select class="form-control" name="province_id" v-model="province" @change="getAllCities()">
+                <select class="form-control" name="province_id"  @change="getAllCities()" v-model="province">
                     <option>استان را انتخاب کنید</option>
-                    <option value="1">آذربایجان شرقی</option>
-                    <option value="2">آذربایجان غربی</option>
-                    <option value="3">اردبیل</option>
-                    <option value="4">اصفهان</option>
-                    <option value="5">البرز</option>
-                    <option value="6">ایلام</option>
-                    <option value="7">بوشهر</option>
-                    <option value="8">تهران</option>
-                    <option value="9">چهارمحال بختیاری</option>
-                    <option value="10">خراسان جنوبی</option>
-                    <option value="11">خراسان رضوی</option>
-                    <option value="12">خراسان شمالی</option>
-                    <option value="13">خوزستان</option>
-                    <option value="14">زنجان</option>
-                    <option value="15">سمنان</option>
-                    <option value="16">سیستان و بلوچستان</option>
-                    <option value="17">فارس</option>
-                    <option value="18">قزوین</option>
-                    <option value="19">قم</option>
-                    <option value="20">کردستان</option>
-                    <option value="21">کرمان</option>
-                    <option value="22">کرمانشاه</option>
-                    <option value="23">کهکیلویه و بویراحمد</option>
-                    <option value="24">گلستان</option>
-                    <option value="25">گیلان</option>
-                    <option value="26">لرستان</option>
-                    <option value="27">مازندران</option>
-                    <option value="28">مرکزی</option>
-                    <option value="29">هرمزگان</option>
-                    <option value="30">همدان</option>
-                    <option value="31">یزد</option>
+                    <option v-if="!address" v-for="province in provinces" :value="province.id">{{province.name}}</option>
+                    <option v-if="address" v-for="province in provinces" :value="province.id" :selected="province.id == address.province_id">{{province.name}}</option>
                 </select>
             </div>
         </div>
-        <div class="form-group d-flex required"  v-if="cities.length> 0">
+        <div class="form-group d-flex required" v-if="cities.length>0">
             <label class="col-sm-2 control-label">شهر</label>
             <div class="col-sm-10">
                 <select class="form-control" name="city_id">
-                    <option v-for="city in cities" :value="city.id">{{city.name}}</option>
+                    <option v-if="!address" v-for="city in cities" :value="city.id">{{city.name}}</option>
+                    <option v-if="address" v-for="city in cities" :value="city.id" :selected="city.id == address.city_id">{{city.name}}</option>
                 </select>
             </div>
         </div>
@@ -56,8 +28,22 @@
         name: "ProvinceComponent",
         data(){
             return{
-                province : 'استان را انتخاب کنید',
                 cities : [],
+                provinces:[],
+                province:'',
+            }
+        },
+        props : ['address'],
+        mounted() {
+            axios.get('/api/provinces').then(res=>{
+                this.provinces = res.data.provinces;
+                console.log(this.provinces)
+            }).catch(err=>{
+                console.log(err)
+            })
+            if(this.address){
+                this.province = this.address.province_id
+                this.getAllCities();
             }
         },
         methods : {

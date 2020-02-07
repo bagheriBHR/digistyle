@@ -124,15 +124,24 @@ nav .position-absolute{
     border: 1px solid #e0e0e0;
     box-shadow: 0 0 10px rgb(236, 236, 236);
 }
-.sidebar h4{
+.sidebar h3{
     font-size: 0.9rem;
     border-bottom: 1px solid #e0e0e0 !important;
     color: rgb(121, 121, 121);
 }
-.sidebar h5{
+.sidebar h5 a{
     font-size: 0.9rem;
-    color:rgb(112, 112, 112)
+    color:rgb(112, 112, 112);
+    text-decoration: none !important;
 }
+.sidebar h4{
+    font-size: 0.8rem;
+    color: rgb(121, 121, 121);
+}
+/*.sidebar h5{*/
+/*    font-size: 0.9rem;*/
+/*    color:rgb(112, 112, 112)*/
+/*}*/
 .sidebar ul{
     border-bottom: 1px solid #f3f3f3;
 }
@@ -259,14 +268,30 @@ nav .position-absolute{
     font-size: 0.8rem;
     color: rgb(153, 152, 152);
 }
-.article button{
+.articlebtn{
     font-size: 0.6rem;
     background-color: #22767c;
     color: #fff !important;
     border-radius: 0px;
 }
-.article button:hover{
+.articlebtn:hover{
     background-color: #d7ac00;
+}
+.articleShow h1{
+    font-size: 2rem;
+    color: #fff;
+    background-color: #22767c;
+}
+.articleShow .desc{
+    line-height: 40px;
+    color: #555555;
+}
+.articleShow .info p{
+    font-size: 0.8rem;
+    color: #555555;
+}
+.articleShow .info p a{
+    color: #555555;
 }
 /* about */
 .about{
@@ -415,7 +440,20 @@ nav .position-absolute{
     color: #1e1e1e;
 }
 .gold{
-    color: #d7ac00;
+     color: #5f5f5f !important;
+
+}
+.gold:hover{
+    color: #d7ac00 !important;
+    text-decoration: none;
+}
+.btn-gold{
+    background-color:#d7ac00 !important ;
+    border-radius: 0px !important;
+    font-size: 0.8rem !important;
+}
+.btn-gold:hover{
+    background-color:#1b6a6f !important ;
 }
 #content p > a{
     color: #d7ac00;
@@ -497,30 +535,29 @@ div.required .control-label:after {
 /**======= 7.7. Pagination =======**/
 .pagination > li > a {
     color:#c68d1e !important;
-    padding: 10px;
+    border:1px solid #c8c8c8 !important;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    background-color:#fff;
+    text-decoration: none;
 }
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
     background-color:#c68d1e !important;
     border-color:#c68d1e !important;
+    color:#fff!important;
+
 }
 .pagination > li > a:hover{
     color:#000!important;
-background-color: transparent;}
-/*.pagination {*/
-/*    display:flex !important;padding-left:0!important;list-style:none!important;border-radius:.25rem!important;}*/
-/*.page-link{position:relative;display:block;padding:.5rem .75rem;margin-left:-1px;line-height:1.25;color:#3490dc;background-color:#fff;border:1px solid #dee2e6}*/
-/*.page-link:hover{z-index:2;color:#1d68a7;text-decoration:none;background-color:#e9ecef;border-color:#dee2e6}*/
-/*.page-link:focus{z-index:2;outline:0;box-shadow:0 0 0 .2rem rgba(52,144,220,.25)}*/
-/*.page-link:not(:disabled):not(.disabled){cursor:pointer}*/
-/*.page-item:first-child .page-link{margin-left:0;border-top-left-radius:.25rem;border-bottom-left-radius:.25rem}*/
-/*.page-item:last-child .page-link{border-top-right-radius:.25rem;border-bottom-right-radius:.25rem}*/
-/*.page-item.active .page-link{z-index:1;color:#fff;background-color:#3490dc;border-color:#3490dc}*/
-/*.page-item.disabled .page-link{color:#6c757d;pointer-events:none;cursor:auto;background-color:#fff;border-color:#dee2e6}*/
-/*.pagination-lg .page-link{padding:.75rem 1.5rem;font-size:1.125rem;line-height:1.5}*/
-/*.pagination-lg .page-item:first-child .page-link{border-top-left-radius:.3rem;border-bottom-left-radius:.3rem}*/
-/*.pagination-lg .page-item:last-child .page-link{border-top-right-radius:.3rem;border-bottom-right-radius:.3rem}*/
-/*.pagination-sm .page-link{padding:.25rem .5rem;font-size:.7875rem;line-height:1.5}*/
-/*.pagination-sm .page-item:first-child .page-link{border-top-left-radius:.2rem;border-bottom-left-radius:.2rem}*/
-/*.pagination-sm .page-item:last-child .page-link{border-top-right-radius:.2rem;border-bottom-right-radius:.2rem}*/
-/*===================================================================================*/
+    background-color: #c68d1e !important;
+    color:#fff !important;
+}
+.like img{
+    width: 15px;
+}
+.like h5{
+    font-size:0.8rem;
+    color: #3b4264;
+}
+
 
